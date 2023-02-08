@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+      - ./app/.yarn:/app/.yarn
+    command: sh -c 'yarn dev'
+    ports:
+      - "3000:3000"
+        #  - "9005:9005"
+    stdin_open: true
+  firebase:
+    container_name: firebase
+    image: andreysenov/firebase-tools
+    user: node
+    command: firebase emulators:start
+    #command: tail -f /dev/null
+    ports:
+      - 9005:9005
+      - 9099:9099
+      - 9199:9199
+      - 5001:5001
+      - 5000:5000
+      - 8080:8080
+      - 8085:8085
+      - 9000:9000
+      - 3003:3003
+      - 4001:4000
+      #- 4000:4000
+    volumes:
+      - ./:/home/node
