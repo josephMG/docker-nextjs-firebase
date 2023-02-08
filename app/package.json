@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn up"
@@ -17,6 +18,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
     "@next/font": "^13.1.6",
+    "clsx": "^1.2.1",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

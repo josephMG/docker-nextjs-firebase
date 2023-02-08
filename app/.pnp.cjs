@@ -37,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/font", "npm:13.1.6"],\
             ["@types/node", "npm:18.13.0"],\
             ["@types/react", "npm:18.0.27"],\
+            ["clsx", "npm:1.2.1"],\
             ["eslint", "npm:8.33.0"],\
             ["eslint-config-next", "virtual:2cd63a3aacac2d13ea3da83a712921f888c36c3be05661c6d05a874a14a07dc7000b6d8c5649aeae8e81deefd232e6697f5d99b6afb2e2e8b975be75c5a11e01#npm:13.1.6"],\
             ["next", "virtual:2cd63a3aacac2d13ea3da83a712921f888c36c3be05661c6d05a874a14a07dc7000b6d8c5649aeae8e81deefd232e6697f5d99b6afb2e2e8b975be75c5a11e01#npm:13.1.6"],\
@@ -3286,6 +3287,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/font", "npm:13.1.6"],\
             ["@types/node", "npm:18.13.0"],\
             ["@types/react", "npm:18.0.27"],\
+            ["clsx", "npm:1.2.1"],\
             ["eslint", "npm:8.33.0"],\
             ["eslint-config-next", "virtual:2cd63a3aacac2d13ea3da83a712921f888c36c3be05661c6d05a874a14a07dc7000b6d8c5649aeae8e81deefd232e6697f5d99b6afb2e2e8b975be75c5a11e01#npm:13.1.6"],\
             ["next", "virtual:2cd63a3aacac2d13ea3da83a712921f888c36c3be05661c6d05a874a14a07dc7000b6d8c5649aeae8e81deefd232e6697f5d99b6afb2e2e8b975be75c5a11e01#npm:13.1.6"],\
