@@ -1,0 +1,10 @@
+{
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "eslint.autoFixOnSave": true,
+  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "tsserver.useLocalTsdk": true,
+  "tsserver.ignoreLocalTsserver": true,
+  "diagnostic.displayByAle": true
+}
