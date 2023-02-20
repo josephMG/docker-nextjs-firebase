@@ -1,0 +1,13 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "eslint.autoFixOnSave": true,
+  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "tsserver.useLocalTsdk": true,
+  "tsserver.ignoreLocalTsserver": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "diagnostic.displayByAle": true
+}
