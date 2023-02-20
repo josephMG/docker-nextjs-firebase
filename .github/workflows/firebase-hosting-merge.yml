@@ -2,6 +2,12 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
 'on':
   push:
     branches:
@@ -14,15 +20,24 @@ jobs:
         working-directory: ./app
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: yarn set version stable
-      - run: yarn install --immutable && yarn build && yarn run export
+          node-version: ${{ matrix.node-version }}
+
+      # - run: yarn set version stable
+      - run: yarn install --immutable && yarn build
+
+      - name: Enable Firebase Experiments
+        run: /usr/local/bin/npx firebase-tools@latest experiments:enable webframeworks
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entrypoint: "./app"
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIR_FIREBASE_94FDD }}'
           channelId: live
           projectId: fir-firebase-94fdd
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
