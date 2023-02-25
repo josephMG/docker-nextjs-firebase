@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@/src/Link";
 import Copyright from "@/src/Copyright";
-import ProTip from "@/src/ProTip";
 
 export default function HomePage() {
   return (
@@ -20,12 +19,11 @@ export default function HomePage() {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          User property management
         </Typography>
         <Link href="/about" color="secondary">
           Go to the about page
         </Link>
-        <ProTip />
         <Copyright />
       </Box>
     </Container>

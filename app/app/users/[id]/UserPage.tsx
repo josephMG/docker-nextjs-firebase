@@ -4,10 +4,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Link from "@/src/Link";
-import ProTip from "@/src/ProTip";
 import Copyright from "@/src/Copyright";
 
-export default function About() {
+export default function User() {
   return (
     <Container maxWidth="lg">
       <Box
@@ -20,14 +19,13 @@ export default function About() {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          User property management
         </Typography>
         <Box maxWidth="sm">
           <Button variant="contained" component={Link} noLinkStyle href="/">
             Go to the home page
           </Button>
         </Box>
-        <ProTip />
         <Copyright />
       </Box>
     </Container>
