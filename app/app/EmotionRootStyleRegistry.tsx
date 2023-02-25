@@ -4,7 +4,7 @@ import createCache from "@emotion/cache";
 import { useServerInsertedHTML } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { darkTheme } from "./theme";
+import { darkTheme } from "@/configs/theme";
 
 export default function RootStyleRegistry({
   children,
