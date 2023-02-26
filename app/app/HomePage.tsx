@@ -3,28 +3,23 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Link from "@/src/Link";
-import Copyright from "@/src/Copyright";
+import Button from "@mui/material/Button";
 
 export default function HomePage() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidthhh="lg">
       <Box
         sx={{
           my: 4,
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h4" component="h1">
           User property management
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <Copyright />
+        <Button variant="contained">Add user</Button>
       </Box>
     </Container>
   );

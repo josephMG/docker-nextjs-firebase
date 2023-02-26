@@ -2,9 +2,7 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Link from "@/src/Link";
-import Copyright from "@/src/Copyright";
+import Link from "@/components/Link";
 
 export default function User() {
   return (
@@ -22,11 +20,10 @@ export default function User() {
           User property management
         </Typography>
         <Box maxWidth="sm">
-          <Button variant="contained" component={Link} noLinkStyle href="/">
+          <Link href="/about" color="secondary">
             Go to the home page
-          </Button>
+          </Link>
         </Box>
-        <Copyright />
       </Box>
     </Container>
   );

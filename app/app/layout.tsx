@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Copyright from "@/components/Copyright";
 import EmotionRootStyleRegistry from "./EmotionRootStyleRegistry";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -6,7 +7,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html>
       <head></head>
       <body>
-        <EmotionRootStyleRegistry>{children}</EmotionRootStyleRegistry>
+        <EmotionRootStyleRegistry>
+          {children}
+          <Copyright />
+        </EmotionRootStyleRegistry>
       </body>
     </html>
   );
