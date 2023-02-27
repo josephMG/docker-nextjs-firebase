@@ -1,10 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { initializeFirestore, CACHE_SIZE_UNLIMITED } from "@firebase/firestore";
 import { getStorage, connectStorageEmulator } from "@firebase/storage";
 import {
   connectFirestoreEmulator,
   enableIndexedDbPersistence,
+  initializeFirestore,
+  CACHE_SIZE_UNLIMITED,
 } from "@firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -33,8 +34,9 @@ if (process.env.NODE_ENV !== "production") {
   connectStorageEmulator(cloudStorage, "localhost", 9199);
   connectFirestoreEmulator(db, "localhost", 8080);
 }
-
-enableIndexedDbPersistence(db);
+if (typeof window !== "undefined") {
+  enableIndexedDbPersistence(db);
+}
 
 export { cloudStorage, db };
 /*
