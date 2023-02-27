@@ -15,10 +15,7 @@ import {
 } from "@mui/material";
 // import { toast } from "react-toastify";
 import { useShareTokenDialog } from "@/hooks/useShareTokenDialog";
-import {
-  TokenInfoProps,
-  TokenInfoWithExperienceProps,
-} from "@/types/TokenProps";
+import { TokenInfoProps } from "@/types/TokenProps";
 import * as TokenService from "@/services/TokenService";
 import ImageUploader from "../ImageUploader";
 
