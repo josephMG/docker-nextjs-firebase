@@ -3,31 +3,58 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Link from "@/src/Link";
-import Copyright from "@/src/Copyright";
-import ProTip from "@/src/ProTip";
+import Button from "@mui/material/Button";
+import { useEffect, useState } from "react";
+import { useShareTokenDialog } from "@/hooks/useShareTokenDialog";
+import TokenInfoDialog from "@/components/dialogs/TokenInfoDialog";
+import * as TokenService from "@/services/TokenService";
+import { TokenInfoProps } from "@/types/TokenProps";
+import Token from "@/components/Token";
 
 export default function HomePage() {
+  const { setDialog } = useShareTokenDialog();
+  const [tokens, setTokens] = useState<TokenInfoProps[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    (async function doWork(): Promise<void> {
+      // async work here
+      if (cancelled) {
+        return;
+      }
+      const data = await TokenService.getTokens();
+      setTokens(data);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   return (
     <Container maxWidth="lg">
       <Box
         sx={{
-          my: 4,
+          mb: 2,
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+        <Typography variant="h4" component="h1">
+          Token List
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
+        <Button
+          variant="contained"
+          onClick={() => setDialog({ open: true, isCreate: true })}
+        >
+          Add Token
+        </Button>
       </Box>
+      <Box display="flex">
+        {tokens.map((token) => (
+          <Token key={token.id} {...token} />
+        ))}
+      </Box>
+      <TokenInfoDialog />
     </Container>
   );
 }
