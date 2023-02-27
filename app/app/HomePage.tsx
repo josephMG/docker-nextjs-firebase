@@ -33,7 +33,7 @@ export default function HomePage() {
     <Container maxWidth="lg">
       <Box
         sx={{
-          mb: 2,
+          my: 2,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
