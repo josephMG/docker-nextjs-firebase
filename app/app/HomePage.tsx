@@ -49,7 +49,7 @@ export default function HomePage() {
           Add Token
         </Button>
       </Box>
-      <Box display="flex">
+      <Box display="flex" sx={{ mx: "auto", width: "90%" }}>
         {tokens.map((token) => (
           <Token key={token.id} {...token} />
         ))}

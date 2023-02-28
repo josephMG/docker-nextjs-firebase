@@ -1,7 +1,6 @@
 import type { ReactElement } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, styled, Theme, Typography } from "@mui/material";
 import Image from "next/legacy/image";
-import styled from "@emotion/styled";
 import { TokenInfoProps } from "@/types/TokenProps";
 
 const myLoader = ({ src }) => {
@@ -10,11 +9,12 @@ const myLoader = ({ src }) => {
     : src;
 };
 
-const StyledBox = styled(Box)({
+const StyledBox = styled(Box)(({ theme }: { theme: Theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-});
+  margin: theme.spacing(4),
+}));
 
 export default function Token({ name, image }: TokenInfoProps): ReactElement {
   return (
@@ -28,7 +28,7 @@ export default function Token({ name, image }: TokenInfoProps): ReactElement {
           height="100"
         />
       )}
-      <Typography sx={{ mx: 1 }}>{name}</Typography>
+      <Typography sx={{ mx: 1, mt: 1 }}>{name}</Typography>
     </StyledBox>
   );
 }
